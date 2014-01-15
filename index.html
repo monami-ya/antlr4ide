@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="ANTLR 4 IDE : ANTLR 4 IDE for Eclipse" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>ANTLR 4 IDE</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/jknack/antlr4ide">View on GitHub</a>
+
+          <h1 id="project_title">ANTLR 4 IDE</h1>
+          <h2 id="project_tagline">ANTLR 4 IDE for Eclipse</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/jknack/antlr4ide/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/jknack/antlr4ide/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="antlr-4-ide" class="anchor" href="#antlr-4-ide"><span class="octicon octicon-link"></span></a>ANTLR 4 IDE</h1>
+
+<p><img src="https://raw.github.com/jknack/antlr4ide/master/site/screenshots/full.png" alt="ANTLR 4 IDE"></p>
+
+<h1>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h1>
+
+<ul>
+<li>ANTLR 4.x</li>
+<li>Advanced Syntax Highlighting (<a href="https://raw.github.com/jknack/antlr4ide/master/site/screenshots/target-language-highlighting.png.png">even for target language</a>)</li>
+<li>Automatic Code Generation (on save)</li>
+<li>Manual Code Generation (through External Tools menu)</li>
+<li>Code Formatter (Ctrl+Shift+F)</li>
+<li><a href="https://raw.github.com/jknack/antlr4ide/master/site/screenshots/Java.g4.html">Syntax Diagrams</a></li>
+<li>Advanced Rule Navigation between files (F3 or Ctrl+Click over a rule)</li>
+<li>Quick fixes</li>
+</ul><h1>
+<a name="welcome" class="anchor" href="#welcome"><span class="octicon octicon-link"></span></a>Welcome</h1>
+
+<p>This is brand new version of the <strong>old</strong> <a href="http://antlrv3ide.sourceforge.net/">ANTLR IDE</a>. The new IDE supports ANTLR 4.x and it was created to run on Eclipse 4.x</p>
+
+<p>The <strong>old</strong> <a href="http://antlrv3ide.sourceforge.net/">ANTLR IDE</a> isn't supported anymore. When I wrote it, I was young and didn't know what was doing ;)</p>
+
+<p>Don't get it me wrong, the old version did a very good work from  user point of view, it just I'm not proud of the code base because is kind of complex and had a poor quality.</p>
+
+<p>The main reason of complexity of the old IDE was in Dynamic Language ToolKit (DLTK) dependency. The DLTK project didn't evolve so much over the last few years and doing something in DLTK is very very complex and require a lot of work.</p>
+
+<p>Now, the <strong>new</strong> IDE was built on <a href="http://www.eclipse.org/Xtext">XText</a>. <a href="http://www.eclipse.org/Xtext">XText</a> is great for building DLS with Eclipse IDE support, so if you are not familiar with <a href="http://www.eclipse.org/Xtext">XText</a> go and see it.</p>
+
+<h1>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h1>
+
+<ul>
+<li>Eclipse 4.3 (Kepler)</li>
+<li>XText 2.5</li>
+</ul><h1>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
+
+<p>ANTLR 4 IDE <strong>isn't</strong> available in the Eclipse Market Place yet, so you MUST installed in the old way. Please follow these instructions:</p>
+
+<ul>
+<li>Open Eclipse Kepler (4.3)</li>
+<li>Go to: <code>Help &gt; Install New Software...</code>
+</li>
+<li>You need to Install XText 2.5</li>
+<li>Copy and paste this url: <a href="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/">http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/</a> in the <strong>Work with</strong> text field</li>
+<li>Hit Enter</li>
+<li>Choose <strong>XText 2.5.0</strong>. NOTE: DON'T confuse with Xtend, you must choose Xtext</li>
+<li>Now, copy and paste this url: <a href="https://github.com/jknack/antlr4ide/raw/master/site/0.1.0/">https://github.com/jknack/antlr4ide/raw/master/site/0.1.0/</a> in the <strong>Work with</strong> text field</li>
+<li>Choose: <strong>ANTLR 4 SDK IDE</strong>. NOTE: If you don't see it, please unmark the <strong>Group items by category</strong> option</li>
+<li>Click: Next and follow the normal Eclipse installation procedure</li>
+</ul><h1>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
+
+<p>The new IDE is very simple to use all the files with a <code>*.g4</code> extension will be opened by the ANTLR 4 Editor. So, just open a <code>*.g4</code> file and play with it</p>
+
+<h1>
+<a name="code-generation" class="anchor" href="#code-generation"><span class="octicon octicon-link"></span></a>Code Generation</h1>
+
+<p>Code is automatically generated on save if the grammar is valid. You can turn off this feature by going to: <code>Window &gt; Preferences &gt; ANTLR 4 &gt; Tool</code> and uncheck the "Tool is activated" option. From there you can configure a couple more of options.</p>
+
+<p>You can find the generated code in the <code>target/generated-sources/antlr4</code> (same directory as antlr4-maven-plugin)</p>
+
+<h1>
+<a name="manual-code-generation" class="anchor" href="#manual-code-generation"><span class="octicon octicon-link"></span></a>Manual Code Generation</h1>
+
+<p>You can fire a code generation action by selecting a <code>*.g4</code> file from the Package Explorer, right click: <code>Run As &gt; ANTLR 4</code>.</p>
+
+<p>A default ANTLR 4 launch configuration will be created. You can modify the generated launch configuration by going to: <code>Run &gt; External Tools &gt; External Tools Configurations...</code> from there you will see the launch configuration and how to set or override code generation options</p>
+
+<h1>
+<a name="syntax-diagrams" class="anchor" href="#syntax-diagrams"><span class="octicon octicon-link"></span></a>Syntax Diagrams</h1>
+
+<p>To open the Syntax Diagram view go to: <code>Window &gt; Show View &gt; Other</code> search and select: <strong>Syntax Diagram</strong></p>
+
+<h1>
+<a name="want-to-contribute" class="anchor" href="#want-to-contribute"><span class="octicon octicon-link"></span></a>Want to contribute?</h1>
+
+<ul>
+<li>Fork the project on Github.</li>
+<li>Wandering what to work on? See task/bug list and pick up something you would like to work on.</li>
+<li>Create an issue or fix one from <a href="https://github.com/jknack/antlr4ide/issues">issues list</a>.</li>
+<li>If you know the answer to a question posted to our <a href="https://groups.google.com/forum/#!forum/antlr4ide">mailing list</a> - don't hesitate to write a reply.</li>
+<li>Share your ideas or ask questions on <a href="https://groups.google.com/forum/#!forum/antlr4ide">mailing list</a> - don't hesitate to write a reply - that helps us improve javadocs/FAQ.</li>
+<li>If you miss a particular feature - browse or ask on the <a href="https://groups.google.com/forum/#!forum/antlr4ide">mailing list</a> - don't hesitate to write a reply, show us a sample code and describe the problem.</li>
+<li>Write a blog post about how you use or extend handlebars.java.</li>
+<li>Please suggest changes to javadoc/exception messages when you find something unclear.</li>
+<li>If you have problems with documentation, find it non intuitive or hard to follow - let us know about it, we'll try to make it better according to your suggestions. Any constructive critique is greatly appreciated. Don't forget that this is an open source project developed and documented in spare time.</li>
+</ul><h1>
+<a name="help-and-support" class="anchor" href="#help-and-support"><span class="octicon octicon-link"></span></a>Help and Support</h1>
+
+<p><a href="https://groups.google.com/forum/#!forum/antlr4ide">Help and discussion</a></p>
+
+<p><a href="https://github.com/jknack/antlr4ide/issues">Bugs, Issues and Features</a></p>
+
+<h1>
+<a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Author</h1>
+
+<p><a href="https://twitter.com/edgarespina">Edgar Espina</a></p>
+
+<h1>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
+
+<p><a href="http://www.eclipse.org/legal/epl-v10.html">EPL</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">ANTLR 4 IDE maintained by <a href="https://github.com/jknack">jknack</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
