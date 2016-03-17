@@ -20,6 +20,7 @@
     <module>antlr4ide.product</module>
     -->
     <module>updates</module>
+    <module>build-target</module>
   </modules>
 
   <build>
@@ -114,6 +115,13 @@
         <artifactId>target-platform-configuration</artifactId>
         <version>${tycho-version}</version>
         <configuration>
+          <target>
+            <artifact>
+              <groupId>com.github.jknack</groupId>
+              <artifactId>build-target</artifactId>
+              <version>0.3.6-SNAPSHOT</version>
+            </artifact>
+          </target>
           <environments>
             <environment>
               <os>linux</os>
@@ -186,5 +194,20 @@
       <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/</url>
     </repository>
     -->
+    <repository>
+      <id>PowerMock</id>
+      <layout>p2</layout>
+      <url>http://powermock-osgi.googlecode.com/svn/updateSite/1.5.4.1/</url>
+    </repository>
+    <repository>
+      <id>Orbit</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/tools/orbit/downloads/drops/R20150124073747/repository</url>
+    </repository>
+    <repository>
+      <id>PizzaFactory bits</id>
+      <layout>p2</layout>
+      <url>http://pizzafactory.github.io/bits/p2repo/8.5/1.0.0.201603170247/</url>
+    </repository>
   </repositories>
 </project>
